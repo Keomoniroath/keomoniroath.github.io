@@ -747,12 +747,12 @@ footer ul {
         padding: 80px 80px 0;
         top: -10px;
     }
-    .timeline .icon img {
+    .icon {
         width: 50px;
+        height: 50px;
+    }
+    .timeline .icon img {
         padding: 12px;
-        top: 24px;
-        left: 24px;
-        margin-left: 6px;
     }
     .bloc-title span:first-child {
         font-size: 20px;
@@ -771,14 +771,12 @@ footer ul {
     .bloc-timeline:nth-child(odd) .icon-transparent-bg {
         width: 65px;
         height: 65px;
-        top: 17px;
-        right: -31px;
+        top: -7px;
     }   
     .bloc-timeline:nth-child(even) .icon-transparent-bg {
         width: 65px;
         height: 65px;
-        top: 17px;
-        right: 19px;
+        top: -7px;
     }
     .bloc-timeline:nth-child(odd) .bloc-title {
         top: -47px;
