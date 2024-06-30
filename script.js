@@ -1,11 +1,12 @@
 
-var slideIndex = 1;
+var slideIndex = 0;
 var slides = document.getElementsByClassName("slide");
 var number = document.getElementsByClassName("number");
-showSlides(slideIndex);
+var chevron = document.getElementsByClassName("chevron");
+var timer = setInterval(autoPlay, 5000);
 
 function nextSlide(n) {
-    showSlides(slideIndex += n);
+    showSlides(n);
 }
 
 function currentSlide(n) {
@@ -14,20 +15,34 @@ function currentSlide(n) {
 
 function showSlides(n) {
     var i;
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    var activeSlide = document.getElementsByClassName("active-slide");
+    var id = activeSlide[0].id;
+
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
+        slides[i].className = slides[i].className.replace(" active-slide", "");
     }
     for (i = 0; i < number.length; i++) {
         number[i].className = number[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    number[slideIndex-1].className += " active";
+    if(id == 3 && n == 1) {
+        nextId = 0;
+    } else if (id == 0 && n < 0) {
+        nextId = 3;
+    }
+    else {
+        nextId = parseInt(id) + n;
+    }
+    slides[nextId].style.display = "block";
+    number[nextId].className += " active";
+    slides[nextId].className += " active-slide";
+
+    // Clear autoplay interval and reset at 5000
+    clearInterval(timer);
+    timer = setInterval(autoPlay, 5000);
 }
 
 // Autoplay to carousel
-setInterval(autoPlay, 4000);
 function autoPlay() {
     var activeSlide = document.getElementsByClassName("active-slide");
     var id = activeSlide[0].id;
@@ -45,7 +60,6 @@ function autoPlay() {
     slides[nextId].className += " active-slide";
     number[nextId].className += " active";
     number[id].className = number[id].className.replace(" active", "");
-
 }
 
 // Show timeline content on click
@@ -71,7 +85,12 @@ function displayTimelineContent() {
         cardTimeline.classList.remove('active');
         timelineContent.style.display = 'none';
         iconBg.style.display = 'none';
-        cardTimeline.style.height = '135px';
+        var mobile = window.matchMedia("(max-width: 450px)");
+        if (mobile.matches) {
+            cardTimeline.style.height = '90px';
+        } else {
+            cardTimeline.style.height = '135px';
+        }
     }
 }
 

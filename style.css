@@ -60,10 +60,13 @@ nav a:hover {
   margin: auto;
 }
 .slide {
-    display: block;
+    display: none;
 }
 .slide img {
     height: 820px;
+}
+.active-slide, .number.active {
+    display: block;
 }
 .prev, .next {
   cursor: pointer;
@@ -722,6 +725,9 @@ footer ul {
         height: 320px;
         margin-bottom: 10px;
     }
+    .news picture {
+        height: 210px;
+    }
     .onde-1 {
         top: 0;
     }
@@ -739,9 +745,10 @@ footer ul {
     }
     .timeline .icon img {
         width: 50px;
-        padding: 14px;
+        padding: 12px;
         top: 24px;
         left: 24px;
+        margin-left: 6px;
     }
     .bloc-title span:first-child {
         font-size: 20px;
@@ -788,7 +795,7 @@ footer ul {
         width: 94%;
     }
     .bloc-timeline {
-        height: 91px;
+        height: 90px;
     }
     .bloc-timeline:nth-child(even) .bloc-title {
         top: -60px;
