@@ -1,0 +1,101 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh; /* Pour centrer la .card c'est plus jolie */
+    background-color: #EACCCC;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #111;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    width: 300px;
+    height: auto;
+    background: #ffffff;
+    padding: 20px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.card-img img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.dot {
+    width: 10px;
+    display: inline-block;
+    background: #9CC183;
+    height: 10px;
+    border-radius: 50px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.card-header>div {
+    background-color: #D8E9D2;
+    font-weight: 600;
+    display: inline;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.card-header .commentaire {
+    color: #666666;
+}
+
+a {
+    background-color: #F3F3F3;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+.card-content span:first-child {
+    font-weight: 600;
+    display: block;
+}
+
+.card-content span:last-child {
+    margin: 10px 0;
+    display: flex;
+    font-size: 12px;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.card-footer>span, .card-footer a {
+    font-weight: 600;
+    background-color: #F3F3F3;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #000000;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
